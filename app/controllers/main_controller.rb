@@ -1,6 +1,11 @@
 class MainController < ApplicationController
+  before_filter :authenticate, :only => [:protect]
+  
   def index
-    # do nothing
-    #@message = 'Hello!'
+    
+  end
+  
+  def protect
+    
   end
 end

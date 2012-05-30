@@ -1,1 +1,8 @@
-<h1>Hi</h1>
+<h1>Hi<% if logged_in? %>, <% end %></h1>
+<p><a href="/main/protect">Protected</a> page</p>
+<% if logged_in? %>
+<p>To logout, <a href="/signout">click here</a>.</p>
+<p><small>User.id: <%= session[:user_id] %></small></p>
+<% else %>
+<p>To login, <a href="/auth/facebook">click here</a></p>
+<% end %>
